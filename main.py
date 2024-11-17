@@ -1,12 +1,8 @@
-from logic.data_serializer import DataSerializer
-from logic.note_logic import Note
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+from ui.main_window import MainWindow
 
 if __name__ == "__main__":
-    note = Note("Пример заметки", "Текст заметки", ["Python", "заметка"])
-    print(note.to_dict())
-
-    notes = [note.to_dict()]
-    DataSerializer.save_to_file(notes, "notes.json")
-
-    loaded_notes = DataSerializer.load_from_file("notes.json")
-    print(loaded_notes)
+    app = MainWindow()
+    app.mainloop()
