@@ -1,8 +1,11 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from ui.main_window import MainWindow
+from PyQt5.QtWidgets import QApplication
+from main_form import MainForm
 
 if __name__ == "__main__":
-    app = MainWindow()
-    app.mainloop()
+    app = QApplication([])
+
+    window = MainForm()
+
+    window.show()
+
+    app.exec_()
